@@ -1,0 +1,89 @@
+.header {
+    width: 100%;
+    height: 100vh;
+    color: $light_text;
+    &__title {
+        position: relative;
+        font-size: 54px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        margin-bottom: 40px;
+        &::before {
+            position: absolute;
+            top: -150px;
+            @include center;
+            content: url(../img/header/logo.svg);
+        }
+    }
+    &__text {
+        text-transform: uppercase;
+        line-height: 28px;
+    }
+    &__container {
+        padding: 0 120px;
+    }
+    &__bg {
+        z-index: -1;
+    }
+    &__scroll {
+        position: absolute;
+        bottom: 10%;
+        @include center;
+        transform: translateY(0) translateX(-50%) scale(1);
+        transition: transform 0.3s ease-in;
+        &::before {
+            content: "\e901";
+            font-family: 'icomoon';
+            color: $light_text;
+            font-size: 40px;
+        }
+        &:hover {
+            transform: translateY(10px) translateX(-50%) scale(1.3);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        &__title {
+            &::before {
+                top: -100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        &__container {
+            padding: 0 60px;
+        }
+        &__scroll {
+            bottom: 5%;
+        }
+        &__title {
+            &::before {
+                top: -80px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .header {
+        &__container {
+            padding: 0 0;
+        }
+        &__title {
+            font-size: 34px;
+        }
+        &__text {
+            font-size: 12px;
+        }
+        &__title {
+            &::before {
+                top: -130px;
+            }
+        }
+    }
+}

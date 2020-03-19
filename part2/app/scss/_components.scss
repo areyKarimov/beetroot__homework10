@@ -1,0 +1,160 @@
+.button {
+    padding: 20px 130px;
+    background: $btn_bg;
+    color: $btn_text;
+    text-transform: uppercase;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    &:hover {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .button {
+        padding: 20px 40px;
+    }
+}
+.container {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin: 0 auto;
+}
+.inner {
+    position: relative;
+    padding: 70px 150px;
+    z-index: 1;
+    position: relative;
+    border-left: 2px solid $dark_text;
+    border-right: 2px solid $dark_text;
+    border-bottom: 2px solid $dark_text;
+    color: $dark_text;
+    &::before {
+        position: absolute;
+        content: '';
+        width: 25%;
+        height: 2px;
+        top: 0;
+        left: 0;
+        background: $dark_text;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        width: 25%;
+        height: 2px;
+        top: 0;
+        right: 0;
+        background: $dark_text;
+    }
+    &-dark {
+        border-left: 2px solid $dark_text;
+        border-right: 2px solid $dark_text;
+        border-bottom: 2px solid $dark_text;
+        color: $dark_text;
+        &::before {
+            background: $dark_text;
+        }
+        &::after {
+            background: $dark_text;
+        }
+    }
+    &-light {
+        border-left: 2px solid $light_text;
+        border-right: 2px solid $light_text;
+        border-bottom: 2px solid $light_text;
+        color: $light_text;
+        &::before {
+            background: $light_text;
+        }
+        &::after {
+            background: $light_text;
+        }
+    }
+    &__title {
+        position: absolute;
+        top: -18px;
+        @include center;
+        font-size: 34px;
+        letter-spacing: 0.2em;
+    }
+    &__p {
+        line-height: 24px;
+        font-weight: 300;
+        &:nth-of-type(2) {
+            padding: 20px 60px 0;
+        }
+    }
+    &__item {
+        margin: 200px 0;
+        position: relative;
+        &::before {
+            position: absolute;
+            top: -110px;
+            @include center;
+            font-family: 'icomoon';
+            font-size: 70px;
+            font-weight: 300;
+        }
+        &:nth-child(1) {
+            margin-top: 150px;
+            &:before {
+                content: "\e902";
+            }
+        }
+        &:nth-child(2) {
+            &:before {
+                content: "\e903";
+            }
+        }
+        &:nth-child(3) {
+            margin-bottom: 20px;
+            &:before {
+                content: "\e904";
+            }
+        }
+        &__title {
+            letter-spacing: 0.2em;
+            margin-bottom: 25px;
+        }
+        & .inner__p {
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .inner {
+        padding: 30px 50px;
+        &__title {
+            font-size: 24px;
+            top: -14px;
+        }
+        &__item {
+            margin: 150px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .inner {
+        padding: 20px 15px;
+        &__title {
+            font-size: 20px;
+            top: -12px;
+        }
+        &__p {
+            &:nth-of-type(2) {
+                padding: 10px 30px 0;
+            }
+        }
+    }
+}

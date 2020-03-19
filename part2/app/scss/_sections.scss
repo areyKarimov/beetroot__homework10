@@ -1,0 +1,198 @@
+.about {
+    padding: 150px 0;
+}
+
+@media screen and (max-width: 480px) {
+    .about {
+        padding: 50px 0;
+    }
+}
+.contact {
+    padding: 130px 0 0 0;
+    & .button {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact {
+        padding: 50px 0 0 0;
+    }
+}
+.footer {
+    padding: 70px 0;
+    color: $dark_text;
+    &__rights {
+        padding-left: 80px;
+        position: relative;
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            transform: translateY(-50%);
+            content: url(../img/footer/icon1.png);
+            z-index: 10;
+        }
+    }
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    color: $light_text;
+    &__title {
+        position: relative;
+        font-size: 54px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        margin-bottom: 40px;
+        &::before {
+            position: absolute;
+            top: -150px;
+            @include center;
+            content: url(../img/header/logo.svg);
+        }
+    }
+    &__text {
+        text-transform: uppercase;
+        line-height: 28px;
+    }
+    &__container {
+        padding: 0 120px;
+    }
+    &__bg {
+        z-index: -1;
+    }
+    &__scroll {
+        position: absolute;
+        bottom: 10%;
+        @include center;
+        transform: translateY(0) translateX(-50%) scale(1);
+        transition: transform 0.3s ease-in;
+        &::before {
+            content: "\e901";
+            font-family: 'icomoon';
+            color: $light_text;
+            font-size: 40px;
+        }
+        &:hover {
+            transform: translateY(10px) translateX(-50%) scale(1.3);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        &__title {
+            &::before {
+                top: -100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        &__container {
+            padding: 0 60px;
+        }
+        &__scroll {
+            bottom: 5%;
+        }
+        &__title {
+            &::before {
+                top: -80px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .header {
+        &__container {
+            padding: 0 0;
+        }
+        &__title {
+            font-size: 34px;
+        }
+        &__text {
+            font-size: 12px;
+        }
+        &__title {
+            &::before {
+                top: -130px;
+            }
+        }
+    }
+}
+.links {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2, 240px);
+    grid-template-columns: repeat(3, 33.3%);
+    grid-gap: 10px;
+    &__item {
+        position: relative;
+        padding: 40px;
+        display: flex;
+        align-items: flex-end;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    }
+    &__name {
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+        font-size: 34px;
+        letter-spacing: 0.2em;
+        color: $light_text;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .links {
+        &__name {
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .links {
+        grid-template-rows: repeat(6, 240px);
+        grid-gap: 10px;
+        grid-template-columns: repeat(1, 100%);
+    }
+}
+.services {
+    &__header {
+        position: relative;
+        padding: 120px 0;
+    }
+    &__what {
+        padding: 100px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services {
+        &__header {
+            padding: 60px 10px;
+        }
+        &__what {
+            padding: 50px 0;
+        }
+    }
+}

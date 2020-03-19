@@ -1,0 +1,19 @@
+.button {
+    padding: 20px 130px;
+    background: $btn_bg;
+    color: $btn_text;
+    text-transform: uppercase;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    &:hover {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .button {
+        padding: 20px 40px;
+    }
+}
